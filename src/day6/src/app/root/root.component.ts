@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RootComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    console.log('00');
+    $('#id').html('11');
+    $('#id').click(function () {
+      console.log('22');
+      $('#id').html('jquery works..');
+    });
+    console.log('33');
   }
 
 }
